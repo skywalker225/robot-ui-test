@@ -124,7 +124,7 @@ Create Order With Incomplete Credit Card Should Fail
     Sleep   5s
     Run Keyword And Continue On Failure     Location Should Be      ${URL_BASE}${ALIAS_CHECKOUT_PD}
 
-Create Order With Valid Input Should 
+Create Order With Valid Credit Card Should Succeed
     [Documentation]     Checkout with valid card number, name, expiration and cvv in payment process
     [Tags]      Checkout
     Add Product To Cart     ${URL_BASE}     ${ALIAS_CATALOGUE}      ${ALIAS_WATCH}
