@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.5 on darwin)" generated="20220315 00:06:15.702" rpa="false" schemaversion="2">
+<suite id="s1" name="29Next Ui Test" source="/Users/monchayaaudson/Documents/next/29next_ui_test.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL_BASE}</arg>
+<arg>${BROWSER}</arg>
+<arg>Maximize Browser Window</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220315 00:06:15.931" level="INFO">Opening browser 'Chrome' to base url 'https://aptest.29next.store/'.</msg>
+<status status="PASS" starttime="20220315 00:06:15.931" endtime="20220315 00:06:21.172"/>
+</kw>
+<test id="s1-t1" name="Register With Available Email Should Succeed">
+<kw name="Register Attempt" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_REGISTER}</arg>
+<arg>${FNAME}</arg>
+<arg>${LNAME}</arg>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${URL_BASE}${ALIAS_PROFILE}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:21.175" level="INFO">Opening url 'https://aptest.29next.store/accounts/register/'</msg>
+<status status="PASS" starttime="20220315 00:06:21.175" endtime="20220315 00:06:24.847"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_first_name</arg>
+<arg>${fname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:24.849" level="INFO">Typing text 'Test' into text field 'id=id_first_name'.</msg>
+<status status="PASS" starttime="20220315 00:06:24.848" endtime="20220315 00:06:25.010"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_last_name</arg>
+<arg>${lname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:25.011" level="INFO">Typing text 'User' into text field 'id=id_last_name'.</msg>
+<status status="PASS" starttime="20220315 00:06:25.010" endtime="20220315 00:06:25.066"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:25.066" level="INFO">Typing text 'dev+uat10@29next.com' into text field 'id=id_email'.</msg>
+<status status="PASS" starttime="20220315 00:06:25.066" endtime="20220315 00:06:25.145"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_password1</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:25.146" level="INFO">Typing text '29NextTest' into text field 'id=id_password1'.</msg>
+<status status="PASS" starttime="20220315 00:06:25.145" endtime="20220315 00:06:25.212"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Register</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:25.212" level="INFO">Clicking button 'Register'.</msg>
+<status status="PASS" starttime="20220315 00:06:25.212" endtime="20220315 00:06:27.455"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${location}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220315 00:06:27.459" level="INFO">Current location is 'https://aptest.29next.store/accounts/profile/'.</msg>
+<status status="PASS" starttime="20220315 00:06:27.455" endtime="20220315 00:06:27.459"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:21.174" endtime="20220315 00:06:27.459"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL_BASE}${ALIAS_LOGOUT}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:27.460" level="INFO">Opening url 'https://aptest.29next.store/accounts/logout/'</msg>
+<status status="PASS" starttime="20220315 00:06:27.460" endtime="20220315 00:06:28.318"/>
+</kw>
+<doc>Register with available and valid email</doc>
+<tag>Register</tag>
+<status status="PASS" starttime="20220315 00:06:21.173" endtime="20220315 00:06:28.318"/>
+</test>
+<test id="s1-t2" name="Register With Existed Email Should Fail">
+<kw name="Register Attempt" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_REGISTER}</arg>
+<arg>${FNAME}</arg>
+<arg>${LNAME}</arg>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${URL_BASE}${ALIAS_REGISTER}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:28.321" level="INFO">Opening url 'https://aptest.29next.store/accounts/register/'</msg>
+<status status="PASS" starttime="20220315 00:06:28.321" endtime="20220315 00:06:29.242"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_first_name</arg>
+<arg>${fname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:29.244" level="INFO">Typing text 'Test' into text field 'id=id_first_name'.</msg>
+<status status="PASS" starttime="20220315 00:06:29.243" endtime="20220315 00:06:29.348"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_last_name</arg>
+<arg>${lname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:29.349" level="INFO">Typing text 'User' into text field 'id=id_last_name'.</msg>
+<status status="PASS" starttime="20220315 00:06:29.348" endtime="20220315 00:06:29.403"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:29.403" level="INFO">Typing text 'dev+uat10@29next.com' into text field 'id=id_email'.</msg>
+<status status="PASS" starttime="20220315 00:06:29.403" endtime="20220315 00:06:29.465"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_password1</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:29.466" level="INFO">Typing text '29NextTest' into text field 'id=id_password1'.</msg>
+<status status="PASS" starttime="20220315 00:06:29.465" endtime="20220315 00:06:29.524"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Register</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:29.525" level="INFO">Clicking button 'Register'.</msg>
+<status status="PASS" starttime="20220315 00:06:29.524" endtime="20220315 00:06:30.248"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${location}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220315 00:06:30.252" level="INFO">Current location is 'https://aptest.29next.store/accounts/register/'.</msg>
+<status status="PASS" starttime="20220315 00:06:30.248" endtime="20220315 00:06:30.252"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:28.320" endtime="20220315 00:06:30.252"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${REGISTER_FAIL_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220315 00:06:30.252" endtime="20220315 00:06:30.265"/>
+</kw>
+<doc>Register with existed email</doc>
+<tag>Register</tag>
+<status status="PASS" starttime="20220315 00:06:28.319" endtime="20220315 00:06:30.265"/>
+</test>
+<test id="s1-t3" name="Login With Username That Does Not Existed Should Fail">
+<kw name="Login Attempt" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_LOGIN}</arg>
+<arg>${INVALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${URL_BASE}${ALIAS_LOGIN}</arg>
+<arg>${LOGIN_FAIL_MESSAGE}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:30.267" level="INFO">Opening url 'https://aptest.29next.store/accounts/login/'</msg>
+<status status="PASS" starttime="20220315 00:06:30.267" endtime="20220315 00:06:30.893"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_login-username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:30.894" level="INFO">Typing text 'dev+uat10@29next.co' into text field 'id=id_login-username'.</msg>
+<status status="PASS" starttime="20220315 00:06:30.893" endtime="20220315 00:06:30.968"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_login-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:30.969" level="INFO">Typing text '29NextTest' into text field 'id=id_login-password'.</msg>
+<status status="PASS" starttime="20220315 00:06:30.968" endtime="20220315 00:06:31.031"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=login_submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:31.031" level="INFO">Clicking button 'name=login_submit'.</msg>
+<status status="PASS" starttime="20220315 00:06:31.031" endtime="20220315 00:06:31.764"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${location}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220315 00:06:31.768" level="INFO">Current location is 'https://aptest.29next.store/accounts/login/'.</msg>
+<status status="PASS" starttime="20220315 00:06:31.764" endtime="20220315 00:06:31.768"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${message}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220315 00:06:31.768" endtime="20220315 00:06:31.777"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:30.266" endtime="20220315 00:06:31.777"/>
+</kw>
+<doc>Login with username(email) that's not existed</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20220315 00:06:30.266" endtime="20220315 00:06:31.777"/>
+</test>
+<test id="s1-t4" name="Login With Password That Does Not Matched Should Fail">
+<kw name="Login Attempt" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_LOGIN}</arg>
+<arg>${VALID_USERNAME}</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<arg>${URL_BASE}${ALIAS_LOGIN}</arg>
+<arg>${LOGIN_FAIL_MESSAGE}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:31.779" level="INFO">Opening url 'https://aptest.29next.store/accounts/login/'</msg>
+<status status="PASS" starttime="20220315 00:06:31.779" endtime="20220315 00:06:32.736"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_login-username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:32.737" level="INFO">Typing text 'dev+uat10@29next.com' into text field 'id=id_login-username'.</msg>
+<status status="PASS" starttime="20220315 00:06:32.736" endtime="20220315 00:06:32.809"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_login-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:32.810" level="INFO">Typing text '29NextTests' into text field 'id=id_login-password'.</msg>
+<status status="PASS" starttime="20220315 00:06:32.809" endtime="20220315 00:06:32.870"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=login_submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:32.870" level="INFO">Clicking button 'name=login_submit'.</msg>
+<status status="PASS" starttime="20220315 00:06:32.870" endtime="20220315 00:06:34.028"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${location}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220315 00:06:34.032" level="INFO">Current location is 'https://aptest.29next.store/accounts/login/'.</msg>
+<status status="PASS" starttime="20220315 00:06:34.028" endtime="20220315 00:06:34.032"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${message}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220315 00:06:34.032" endtime="20220315 00:06:34.037"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:31.778" endtime="20220315 00:06:34.037"/>
+</kw>
+<doc>Login with existed username(email) but invalid password</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20220315 00:06:31.778" endtime="20220315 00:06:34.038"/>
+</test>
+<test id="s1-t5" name="Login With Valid Username And Password Should Succeed">
+<kw name="Login Attempt" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_LOGIN}</arg>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${URL_BASE}${ALIAS_PROFILE}</arg>
+<arg>${LOGIN_PASS_MESSAGE}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:34.040" level="INFO">Opening url 'https://aptest.29next.store/accounts/login/'</msg>
+<status status="PASS" starttime="20220315 00:06:34.039" endtime="20220315 00:06:34.724"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_login-username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:34.724" level="INFO">Typing text 'dev+uat10@29next.com' into text field 'id=id_login-username'.</msg>
+<status status="PASS" starttime="20220315 00:06:34.724" endtime="20220315 00:06:34.799"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_login-password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:34.799" level="INFO">Typing text '29NextTest' into text field 'id=id_login-password'.</msg>
+<status status="PASS" starttime="20220315 00:06:34.799" endtime="20220315 00:06:34.857"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name=login_submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:34.858" level="INFO">Clicking button 'name=login_submit'.</msg>
+<status status="PASS" starttime="20220315 00:06:34.858" endtime="20220315 00:06:36.513"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${location}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220315 00:06:36.522" level="INFO">Current location is 'https://aptest.29next.store/accounts/profile/'.</msg>
+<status status="PASS" starttime="20220315 00:06:36.513" endtime="20220315 00:06:36.523"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${message}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220315 00:06:36.523" endtime="20220315 00:06:36.536"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:34.039" endtime="20220315 00:06:36.536"/>
+</kw>
+<doc>Login with existed username(email) and valid password</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20220315 00:06:34.038" endtime="20220315 00:06:36.536"/>
+</test>
+<test id="s1-t6" name="Create Order With Empty Address Should Fail">
+<kw name="Add Product To Cart" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CATALOGUE}</arg>
+<arg>${ALIAS_WATCH}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:36.538" level="INFO">Opening url 'https://aptest.29next.store/catalogue/'</msg>
+<status status="PASS" starttime="20220315 00:06:36.538" endtime="20220315 00:06:37.673"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:37.673" endtime="20220315 00:06:37.679"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}${product}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:37.680" level="INFO">Opening url 'https://aptest.29next.store/catalogue/example-product_2/'</msg>
+<status status="PASS" starttime="20220315 00:06:37.679" endtime="20220315 00:06:38.725"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}${product}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:38.725" endtime="20220315 00:06:38.730"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>subscription-option</arg>
+<arg>one-time</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220315 00:06:38.731" level="INFO">Selecting 'one-time' from radio button 'subscription-option'.</msg>
+<status status="PASS" starttime="20220315 00:06:38.731" endtime="20220315 00:06:38.747"/>
+</kw>
+<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
+<arg>subscription-option</arg>
+<arg>one-time</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<msg timestamp="20220315 00:06:38.747" level="INFO">Verifying radio button 'subscription-option' has selection 'one-time'.</msg>
+<status status="PASS" starttime="20220315 00:06:38.747" endtime="20220315 00:06:38.769"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id_quantity</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:06:38.769" level="INFO">Selecting options from selection list 'id_quantity' by value 1.</msg>
+<status status="PASS" starttime="20220315 00:06:38.769" endtime="20220315 00:06:38.797"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Add to cart</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:38.797" level="INFO">Clicking button 'Add to cart'.</msg>
+<status status="PASS" starttime="20220315 00:06:38.797" endtime="20220315 00:06:40.269"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${ALIAS_BASKET}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:40.270" level="INFO">Opening url 'https://aptest.29next.store/basket/'</msg>
+<status status="PASS" starttime="20220315 00:06:40.270" endtime="20220315 00:06:44.538"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=id_form-0-quantity</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:06:44.539" level="INFO">Selecting options from selection list 'id=id_form-0-quantity' by value 1.</msg>
+<status status="PASS" starttime="20220315 00:06:44.538" endtime="20220315 00:06:44.574"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:36.537" endtime="20220315 00:06:44.574"/>
+</kw>
+<kw name="Add Empty Shipping Address" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_SA}</arg>
+<arg>${xpath_address_btn}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:44.575" level="INFO">Opening url 'https://aptest.29next.store/checkout/shipping-address/'</msg>
+<status status="PASS" starttime="20220315 00:06:44.575" endtime="20220315 00:06:45.671"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:45.671" endtime="20220315 00:06:45.676"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate('${xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220315 00:06:45.677" level="INFO">Executing JavaScript:
+document.evaluate('//*[@id="new-shipping-address"]/div[2]/div[1]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20220315 00:06:45.676" endtime="20220315 00:06:45.719"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220315 00:06:45.723" level="INFO">Current location is 'https://aptest.29next.store/checkout/shipping-address/'.</msg>
+<status status="PASS" starttime="20220315 00:06:45.719" endtime="20220315 00:06:45.724"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:44.574" endtime="20220315 00:06:45.724"/>
+</kw>
+<doc>Checkout with empty address</doc>
+<tag>Checkout</tag>
+<status status="PASS" starttime="20220315 00:06:36.537" endtime="20220315 00:06:45.724"/>
+</test>
+<test id="s1-t7" name="Create Order With Empty Credit Card Should Fail">
+<kw name="Add Product To Cart" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CATALOGUE}</arg>
+<arg>${ALIAS_WATCH}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:45.726" level="INFO">Opening url 'https://aptest.29next.store/catalogue/'</msg>
+<status status="PASS" starttime="20220315 00:06:45.726" endtime="20220315 00:06:46.492"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:46.492" endtime="20220315 00:06:46.495"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}${product}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:46.496" level="INFO">Opening url 'https://aptest.29next.store/catalogue/example-product_2/'</msg>
+<status status="PASS" starttime="20220315 00:06:46.496" endtime="20220315 00:06:47.661"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}${product}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:47.661" endtime="20220315 00:06:47.666"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>subscription-option</arg>
+<arg>one-time</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220315 00:06:47.666" level="INFO">Selecting 'one-time' from radio button 'subscription-option'.</msg>
+<status status="PASS" starttime="20220315 00:06:47.666" endtime="20220315 00:06:47.681"/>
+</kw>
+<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
+<arg>subscription-option</arg>
+<arg>one-time</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<msg timestamp="20220315 00:06:47.681" level="INFO">Verifying radio button 'subscription-option' has selection 'one-time'.</msg>
+<status status="PASS" starttime="20220315 00:06:47.681" endtime="20220315 00:06:47.703"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id_quantity</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:06:47.703" level="INFO">Selecting options from selection list 'id_quantity' by value 1.</msg>
+<status status="PASS" starttime="20220315 00:06:47.703" endtime="20220315 00:06:47.730"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Add to cart</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:47.731" level="INFO">Clicking button 'Add to cart'.</msg>
+<status status="PASS" starttime="20220315 00:06:47.730" endtime="20220315 00:06:48.995"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${ALIAS_BASKET}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:48.995" level="INFO">Opening url 'https://aptest.29next.store/basket/'</msg>
+<status status="PASS" starttime="20220315 00:06:48.995" endtime="20220315 00:06:50.198"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=id_form-0-quantity</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:06:50.199" level="INFO">Selecting options from selection list 'id=id_form-0-quantity' by value 1.</msg>
+<status status="PASS" starttime="20220315 00:06:50.198" endtime="20220315 00:06:51.610"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:45.725" endtime="20220315 00:06:51.611"/>
+</kw>
+<kw name="Add Valid Shipping Address" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_SA}</arg>
+<arg>${FNAME}</arg>
+<arg>${LNAME}</arg>
+<arg>${ADDRESS1}</arg>
+<arg>${CITY}</arg>
+<arg>${STATE}</arg>
+<arg>${COUNTRY}</arg>
+<arg>${POSTCODE}</arg>
+<arg>${XPATH_ADDRESS_BTN}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:51.612" level="INFO">Opening url 'https://aptest.29next.store/checkout/shipping-address/'</msg>
+<status status="PASS" starttime="20220315 00:06:51.612" endtime="20220315 00:06:52.319"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:52.319" endtime="20220315 00:06:52.323"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=id_country</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:06:52.324" level="INFO">Selecting options from selection list 'id=id_country' by value US.</msg>
+<status status="PASS" starttime="20220315 00:06:52.323" endtime="20220315 00:06:52.354"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_first_name</arg>
+<arg>${fname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:52.354" level="INFO">Typing text 'Test' into text field 'id=id_first_name'.</msg>
+<status status="PASS" starttime="20220315 00:06:52.354" endtime="20220315 00:06:52.446"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_last_name</arg>
+<arg>${lname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:52.447" level="INFO">Typing text 'User' into text field 'id=id_last_name'.</msg>
+<status status="PASS" starttime="20220315 00:06:52.446" endtime="20220315 00:06:52.557"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_line1</arg>
+<arg>${address1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:52.558" level="INFO">Typing text '234 Test Ave' into text field 'id=id_line1'.</msg>
+<status status="PASS" starttime="20220315 00:06:52.558" endtime="20220315 00:06:52.619"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_line4</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:52.620" level="INFO">Typing text 'Henderson' into text field 'id=id_line4'.</msg>
+<status status="PASS" starttime="20220315 00:06:52.620" endtime="20220315 00:06:52.684"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_state</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:52.684" level="INFO">Typing text 'KY' into text field 'id=id_state'.</msg>
+<status status="PASS" starttime="20220315 00:06:52.684" endtime="20220315 00:06:52.746"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_postcode</arg>
+<arg>${postcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:52.746" level="INFO">Typing text '42301' into text field 'id=id_postcode'.</msg>
+<status status="PASS" starttime="20220315 00:06:52.746" endtime="20220315 00:06:52.806"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate('${xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220315 00:06:52.807" level="INFO">Executing JavaScript:
+document.evaluate('//*[@id="new-shipping-address"]/div[2]/div[1]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20220315 00:06:52.806" endtime="20220315 00:06:55.840"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:51.611" endtime="20220315 00:06:55.840"/>
+</kw>
+<kw name="Add Empty Credit Card" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_PD}</arg>
+<arg>${xpath_payment_btn}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:55.842" level="INFO">Opening url 'https://aptest.29next.store/checkout/payment-details/'</msg>
+<status status="PASS" starttime="20220315 00:06:55.842" endtime="20220315 00:06:56.971"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:56.971" endtime="20220315 00:06:56.976"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate('${xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220315 00:06:56.977" level="INFO">Executing JavaScript:
+document.evaluate('//*[@id="paymentBtn"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20220315 00:06:56.976" endtime="20220315 00:06:57.021"/>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220315 00:06:57.026" level="INFO">Current location is 'https://aptest.29next.store/checkout/payment-details/'.</msg>
+<status status="PASS" starttime="20220315 00:06:57.021" endtime="20220315 00:06:57.026"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:55.841" endtime="20220315 00:06:57.026"/>
+</kw>
+<doc>Checkout with empty card number, name, expiration and cvv in payment process</doc>
+<tag>Checkout</tag>
+<status status="PASS" starttime="20220315 00:06:45.725" endtime="20220315 00:06:57.026"/>
+</test>
+<test id="s1-t8" name="Create Order With Incomplete Credit Card Should Fail">
+<kw name="Add Product To Cart" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CATALOGUE}</arg>
+<arg>${ALIAS_WATCH}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:57.028" level="INFO">Opening url 'https://aptest.29next.store/catalogue/'</msg>
+<status status="PASS" starttime="20220315 00:06:57.028" endtime="20220315 00:06:57.709"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:57.709" endtime="20220315 00:06:57.714"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}${product}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:06:57.715" level="INFO">Opening url 'https://aptest.29next.store/catalogue/example-product_2/'</msg>
+<status status="PASS" starttime="20220315 00:06:57.714" endtime="20220315 00:06:58.737"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}${product}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:06:58.737" endtime="20220315 00:06:58.742"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>subscription-option</arg>
+<arg>one-time</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220315 00:06:58.742" level="INFO">Selecting 'one-time' from radio button 'subscription-option'.</msg>
+<status status="PASS" starttime="20220315 00:06:58.742" endtime="20220315 00:06:58.759"/>
+</kw>
+<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
+<arg>subscription-option</arg>
+<arg>one-time</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<msg timestamp="20220315 00:06:58.759" level="INFO">Verifying radio button 'subscription-option' has selection 'one-time'.</msg>
+<status status="PASS" starttime="20220315 00:06:58.759" endtime="20220315 00:06:58.779"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id_quantity</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:06:58.780" level="INFO">Selecting options from selection list 'id_quantity' by value 1.</msg>
+<status status="PASS" starttime="20220315 00:06:58.779" endtime="20220315 00:06:58.807"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Add to cart</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:06:58.807" level="INFO">Clicking button 'Add to cart'.</msg>
+<status status="PASS" starttime="20220315 00:06:58.807" endtime="20220315 00:07:00.247"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${ALIAS_BASKET}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:07:00.248" level="INFO">Opening url 'https://aptest.29next.store/basket/'</msg>
+<status status="PASS" starttime="20220315 00:07:00.248" endtime="20220315 00:07:01.553"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=id_form-0-quantity</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:07:01.553" level="INFO">Selecting options from selection list 'id=id_form-0-quantity' by value 1.</msg>
+<status status="PASS" starttime="20220315 00:07:01.553" endtime="20220315 00:07:03.702"/>
+</kw>
+<status status="PASS" starttime="20220315 00:06:57.027" endtime="20220315 00:07:03.703"/>
+</kw>
+<kw name="Add Valid Shipping Address" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_SA}</arg>
+<arg>${FNAME}</arg>
+<arg>${LNAME}</arg>
+<arg>${ADDRESS1}</arg>
+<arg>${CITY}</arg>
+<arg>${STATE}</arg>
+<arg>${COUNTRY}</arg>
+<arg>${POSTCODE}</arg>
+<arg>${xpath_address_btn}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:07:03.704" level="INFO">Opening url 'https://aptest.29next.store/checkout/shipping-address/'</msg>
+<status status="PASS" starttime="20220315 00:07:03.704" endtime="20220315 00:07:04.488"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:07:04.488" endtime="20220315 00:07:04.491"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=id_country</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:07:04.491" level="INFO">Selecting options from selection list 'id=id_country' by value US.</msg>
+<status status="PASS" starttime="20220315 00:07:04.491" endtime="20220315 00:07:04.522"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_first_name</arg>
+<arg>${fname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:04.523" level="INFO">Typing text 'Test' into text field 'id=id_first_name'.</msg>
+<status status="PASS" starttime="20220315 00:07:04.522" endtime="20220315 00:07:04.611"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_last_name</arg>
+<arg>${lname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:04.612" level="INFO">Typing text 'User' into text field 'id=id_last_name'.</msg>
+<status status="PASS" starttime="20220315 00:07:04.611" endtime="20220315 00:07:04.723"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_line1</arg>
+<arg>${address1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:04.723" level="INFO">Typing text '234 Test Ave' into text field 'id=id_line1'.</msg>
+<status status="PASS" starttime="20220315 00:07:04.723" endtime="20220315 00:07:04.842"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_line4</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:04.843" level="INFO">Typing text 'Henderson' into text field 'id=id_line4'.</msg>
+<status status="PASS" starttime="20220315 00:07:04.842" endtime="20220315 00:07:04.957"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_state</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:04.957" level="INFO">Typing text 'KY' into text field 'id=id_state'.</msg>
+<status status="PASS" starttime="20220315 00:07:04.957" endtime="20220315 00:07:05.076"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_postcode</arg>
+<arg>${postcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:05.077" level="INFO">Typing text '42301' into text field 'id=id_postcode'.</msg>
+<status status="PASS" starttime="20220315 00:07:05.077" endtime="20220315 00:07:05.197"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate('${xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220315 00:07:05.198" level="INFO">Executing JavaScript:
+document.evaluate('//*[@id="new-shipping-address"]/div[2]/div[1]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20220315 00:07:05.197" endtime="20220315 00:07:07.130"/>
+</kw>
+<status status="PASS" starttime="20220315 00:07:03.703" endtime="20220315 00:07:07.131"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10 sec</arg>
+<arg>1 sec</arg>
+<arg>Add Invalid Credit Card</arg>
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_PD}</arg>
+<arg>${NUMBER}</arg>
+<arg>${NAME}</arg>
+<arg>${EXPIRATION}</arg>
+<arg>${XPATH_PAYMENT_BTN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Add Invalid Credit Card" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_PD}</arg>
+<arg>${NUMBER}</arg>
+<arg>${NAME}</arg>
+<arg>${EXPIRATION}</arg>
+<arg>${XPATH_PAYMENT_BTN}</arg>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:07:07.132" endtime="20220315 00:07:07.137"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>payment_method</arg>
+<arg>new_card</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220315 00:07:07.138" level="INFO">Selecting 'new_card' from radio button 'payment_method'.</msg>
+<status status="PASS" starttime="20220315 00:07:07.137" endtime="20220315 00:07:07.153"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css:[src="https://core.spreedly.com/v1/embedded/number-frame.html?v=1.73"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220315 00:07:07.153" level="INFO">Selecting frame 'css:[src="https://core.spreedly.com/v1/embedded/number-frame.html?v=1.73"]'.</msg>
+<status status="PASS" starttime="20220315 00:07:07.153" endtime="20220315 00:07:07.177"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=card_number</arg>
+<arg>${number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:07.177" level="INFO">Typing text '4111 1111 1111 1111' into text field 'id=card_number'.</msg>
+<status status="PASS" starttime="20220315 00:07:07.177" endtime="20220315 00:07:07.290"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220315 00:07:07.290" endtime="20220315 00:07:07.293"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:07.293" level="INFO">Typing text 'Test User' into text field 'id=id_name'.</msg>
+<status status="PASS" starttime="20220315 00:07:07.293" endtime="20220315 00:07:07.412"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_expiry</arg>
+<arg>${expiration}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:07.413" level="INFO">Typing text '08/26' into text field 'id=id_expiry'.</msg>
+<status status="PASS" starttime="20220315 00:07:07.412" endtime="20220315 00:07:07.477"/>
+</kw>
+<kw name="Unselect Checkbox" library="SeleniumLibrary">
+<arg>id=id_is_saved_card</arg>
+<doc>Removes the selection of checkbox identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:07.478" level="INFO">Unselecting checkbox 'id=id_is_saved_card'.</msg>
+<status status="PASS" starttime="20220315 00:07:07.477" endtime="20220315 00:07:07.559"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>same_as_shipping</arg>
+<arg>true</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220315 00:07:07.560" level="INFO">Selecting 'true' from radio button 'same_as_shipping'.</msg>
+<status status="PASS" starttime="20220315 00:07:07.559" endtime="20220315 00:07:07.576"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate('${xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220315 00:07:07.576" level="INFO">Executing JavaScript:
+document.evaluate('//*[@id="paymentBtn"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20220315 00:07:07.576" endtime="20220315 00:07:07.582"/>
+</kw>
+<status status="PASS" starttime="20220315 00:07:07.131" endtime="20220315 00:07:07.583"/>
+</kw>
+<status status="PASS" starttime="20220315 00:07:07.131" endtime="20220315 00:07:07.583"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220315 00:07:12.584" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220315 00:07:07.583" endtime="20220315 00:07:12.584"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Location Should Be</arg>
+<arg>${URL_BASE}${ALIAS_CHECKOUT_PD}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${URL_BASE}${ALIAS_CHECKOUT_PD}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20220315 00:07:12.800" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220315 00:07:12.801" level="FAIL">Location should have been 'https://aptest.29next.store/checkout/payment-details/' but was 'https://aptest.29next.store/accounts/order-status/106738/106738:DD1lXyb9WDsA4LAwdDRz7kzj8XgEq9E-wZkqjV5usFE/'.</msg>
+<status status="FAIL" starttime="20220315 00:07:12.586" endtime="20220315 00:07:12.801"/>
+</kw>
+<status status="FAIL" starttime="20220315 00:07:12.585" endtime="20220315 00:07:12.801"/>
+</kw>
+<doc>Checkout with valid card number, name and expiration but empty cvv in payment process</doc>
+<tag>Checkout</tag>
+<status status="FAIL" starttime="20220315 00:06:57.027" endtime="20220315 00:07:12.802">Location should have been 'https://aptest.29next.store/checkout/payment-details/' but was 'https://aptest.29next.store/accounts/order-status/106738/106738:DD1lXyb9WDsA4LAwdDRz7kzj8XgEq9E-wZkqjV5usFE/'.</status>
+</test>
+<test id="s1-t9" name="Create Order With Valid Input Should">
+<kw name="Add Product To Cart" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CATALOGUE}</arg>
+<arg>${ALIAS_WATCH}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:07:12.804" level="INFO">Opening url 'https://aptest.29next.store/catalogue/'</msg>
+<status status="PASS" starttime="20220315 00:07:12.803" endtime="20220315 00:07:14.533"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:07:14.533" endtime="20220315 00:07:14.537"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}${product}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:07:14.537" level="INFO">Opening url 'https://aptest.29next.store/catalogue/example-product_2/'</msg>
+<status status="PASS" starttime="20220315 00:07:14.537" endtime="20220315 00:07:15.616"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}${product}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:07:15.617" endtime="20220315 00:07:15.621"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>subscription-option</arg>
+<arg>one-time</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220315 00:07:15.621" level="INFO">Selecting 'one-time' from radio button 'subscription-option'.</msg>
+<status status="PASS" starttime="20220315 00:07:15.621" endtime="20220315 00:07:15.634"/>
+</kw>
+<kw name="Radio Button Should Be Set To" library="SeleniumLibrary">
+<arg>subscription-option</arg>
+<arg>one-time</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<msg timestamp="20220315 00:07:15.634" level="INFO">Verifying radio button 'subscription-option' has selection 'one-time'.</msg>
+<status status="PASS" starttime="20220315 00:07:15.634" endtime="20220315 00:07:15.649"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id_quantity</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:07:15.650" level="INFO">Selecting options from selection list 'id_quantity' by value 1.</msg>
+<status status="PASS" starttime="20220315 00:07:15.649" endtime="20220315 00:07:15.673"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Add to cart</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:15.674" level="INFO">Clicking button 'Add to cart'.</msg>
+<status status="PASS" starttime="20220315 00:07:15.673" endtime="20220315 00:07:17.241"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${ALIAS_BASKET}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:07:17.242" level="INFO">Opening url 'https://aptest.29next.store/basket/'</msg>
+<status status="PASS" starttime="20220315 00:07:17.242" endtime="20220315 00:07:18.241"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=id_form-0-quantity</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:07:18.242" level="INFO">Selecting options from selection list 'id=id_form-0-quantity' by value 1.</msg>
+<status status="PASS" starttime="20220315 00:07:18.242" endtime="20220315 00:07:18.270"/>
+</kw>
+<status status="PASS" starttime="20220315 00:07:12.803" endtime="20220315 00:07:18.271"/>
+</kw>
+<kw name="Add Valid Shipping Address" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_SA}</arg>
+<arg>${FNAME}</arg>
+<arg>${LNAME}</arg>
+<arg>${ADDRESS1}</arg>
+<arg>${CITY}</arg>
+<arg>${STATE}</arg>
+<arg>${COUNTRY}</arg>
+<arg>${POSTCODE}</arg>
+<arg>${xpath_address_btn}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:07:18.272" level="INFO">Opening url 'https://aptest.29next.store/checkout/shipping-address/'</msg>
+<status status="PASS" starttime="20220315 00:07:18.272" endtime="20220315 00:07:19.211"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:07:19.211" endtime="20220315 00:07:19.215"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id=id_country</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20220315 00:07:19.216" level="INFO">Selecting options from selection list 'id=id_country' by value US.</msg>
+<status status="PASS" starttime="20220315 00:07:19.215" endtime="20220315 00:07:19.242"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_first_name</arg>
+<arg>${fname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:19.243" level="INFO">Typing text 'Test' into text field 'id=id_first_name'.</msg>
+<status status="PASS" starttime="20220315 00:07:19.242" endtime="20220315 00:07:19.326"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_last_name</arg>
+<arg>${lname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:19.327" level="INFO">Typing text 'User' into text field 'id=id_last_name'.</msg>
+<status status="PASS" starttime="20220315 00:07:19.326" endtime="20220315 00:07:19.384"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_line1</arg>
+<arg>${address1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:19.385" level="INFO">Typing text '234 Test Ave' into text field 'id=id_line1'.</msg>
+<status status="PASS" starttime="20220315 00:07:19.384" endtime="20220315 00:07:19.449"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_line4</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:19.449" level="INFO">Typing text 'Henderson' into text field 'id=id_line4'.</msg>
+<status status="PASS" starttime="20220315 00:07:19.449" endtime="20220315 00:07:19.512"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_state</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:19.513" level="INFO">Typing text 'KY' into text field 'id=id_state'.</msg>
+<status status="PASS" starttime="20220315 00:07:19.513" endtime="20220315 00:07:19.569"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_postcode</arg>
+<arg>${postcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:19.570" level="INFO">Typing text '42301' into text field 'id=id_postcode'.</msg>
+<status status="PASS" starttime="20220315 00:07:19.570" endtime="20220315 00:07:19.631"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate('${xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220315 00:07:19.632" level="INFO">Executing JavaScript:
+document.evaluate('//*[@id="new-shipping-address"]/div[2]/div[1]/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20220315 00:07:19.632" endtime="20220315 00:07:22.184"/>
+</kw>
+<status status="PASS" starttime="20220315 00:07:18.271" endtime="20220315 00:07:22.184"/>
+</kw>
+<kw name="Add Valid Credit Card" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_PD}</arg>
+<arg>${NUMBER}</arg>
+<arg>${NAME}</arg>
+<arg>${EXPIRATION}</arg>
+<arg>${CVV}</arg>
+<arg>${xpath_payment_btn}</arg>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}${alias}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20220315 00:07:22.186" endtime="20220315 00:07:22.192"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>payment_method</arg>
+<arg>new_card</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220315 00:07:22.193" level="INFO">Selecting 'new_card' from radio button 'payment_method'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.193" endtime="20220315 00:07:22.206"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css:[src="https://core.spreedly.com/v1/embedded/number-frame.html?v=1.73"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220315 00:07:22.207" level="INFO">Selecting frame 'css:[src="https://core.spreedly.com/v1/embedded/number-frame.html?v=1.73"]'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.206" endtime="20220315 00:07:22.227"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=card_number</arg>
+<arg>${number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:22.228" level="INFO">Typing text '4111 1111 1111 1111' into text field 'id=card_number'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.227" endtime="20220315 00:07:22.338"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220315 00:07:22.338" endtime="20220315 00:07:22.340"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_name</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:22.341" level="INFO">Typing text 'Test User' into text field 'id=id_name'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.340" endtime="20220315 00:07:22.427"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=id_expiry</arg>
+<arg>${expiration}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:22.427" level="INFO">Typing text '08/26' into text field 'id=id_expiry'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.427" endtime="20220315 00:07:22.488"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css:[src="https://core.spreedly.com/v1/embedded/cvv-frame.html?v=1.73"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220315 00:07:22.488" level="INFO">Selecting frame 'css:[src="https://core.spreedly.com/v1/embedded/cvv-frame.html?v=1.73"]'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.488" endtime="20220315 00:07:22.510"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=cvv</arg>
+<arg>${cvv}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:22.511" level="INFO">Typing text '123' into text field 'id=cvv'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.511" endtime="20220315 00:07:22.648"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220315 00:07:22.648" endtime="20220315 00:07:22.650"/>
+</kw>
+<kw name="Unselect Checkbox" library="SeleniumLibrary">
+<arg>id=id_is_saved_card</arg>
+<doc>Removes the selection of checkbox identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:22.650" level="INFO">Unselecting checkbox 'id=id_is_saved_card'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.650" endtime="20220315 00:07:22.727"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>same_as_shipping</arg>
+<arg>true</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220315 00:07:22.727" level="INFO">Selecting 'true' from radio button 'same_as_shipping'.</msg>
+<status status="PASS" starttime="20220315 00:07:22.727" endtime="20220315 00:07:22.739"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate('${xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220315 00:07:22.740" level="INFO">Executing JavaScript:
+document.evaluate('//*[@id="paymentBtn"]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20220315 00:07:22.739" endtime="20220315 00:07:22.746"/>
+</kw>
+<status status="PASS" starttime="20220315 00:07:22.185" endtime="20220315 00:07:22.746"/>
+</kw>
+<kw name="Check Order Status" library="keywords">
+<arg>${URL_BASE}</arg>
+<arg>${ALIAS_CHECKOUT_OS}</arg>
+<arg>${ALIAS_ORDER_HIS}</arg>
+<arg>${XPATH_ORDER_CONFIRMED}</arg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Thank you for your order!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220315 00:07:22.747" endtime="20220315 00:07:27.232"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${page_title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220315 00:07:27.236" level="INFO">${page_title} = Order 106739: confirmation | AP's Test Shop - AP Test Shop</msg>
+<status status="PASS" starttime="20220315 00:07:27.232" endtime="20220315 00:07:27.236"/>
+</kw>
+<kw name="Remove String Using Regexp" library="String">
+<var>${order_id}</var>
+<arg>${page_title}</arg>
+<arg>[^0-9]</arg>
+<doc>Removes ``patterns`` from the given ``string``.</doc>
+<msg timestamp="20220315 00:07:27.237" level="INFO">${order_id} = 106739</msg>
+<status status="PASS" starttime="20220315 00:07:27.236" endtime="20220315 00:07:27.237"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}${alias_oh}${order_id}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220315 00:07:27.237" level="INFO">Opening url 'https://aptest.29next.store/accounts/orders/106739'</msg>
+<status status="PASS" starttime="20220315 00:07:27.237" endtime="20220315 00:07:28.373"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${status}</var>
+<arg>${xpath}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220315 00:07:28.391" level="INFO">${status} = Confirmed</msg>
+<status status="PASS" starttime="20220315 00:07:28.373" endtime="20220315 00:07:28.392"/>
+</kw>
+<kw name="Should Match" library="BuiltIn">
+<arg>${status}</arg>
+<arg>Confirmed</arg>
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<status status="PASS" starttime="20220315 00:07:28.392" endtime="20220315 00:07:28.392"/>
+</kw>
+<status status="PASS" starttime="20220315 00:07:22.746" endtime="20220315 00:07:28.392"/>
+</kw>
+<doc>Checkout with valid card number, name, expiration and cvv in payment process</doc>
+<tag>Checkout</tag>
+<status status="PASS" starttime="20220315 00:07:12.802" endtime="20220315 00:07:28.392"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220315 00:07:28.393" endtime="20220315 00:07:28.500"/>
+</kw>
+<status status="FAIL" starttime="20220315 00:06:15.703" endtime="20220315 00:07:28.500"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="1" skip="0">Checkout</stat>
+<stat pass="3" fail="0" skip="0">Login</stat>
+<stat pass="2" fail="0" skip="0">Register</stat>
+</tag>
+<suite>
+<stat pass="8" fail="1" skip="0" id="s1" name="29Next Ui Test">29Next Ui Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

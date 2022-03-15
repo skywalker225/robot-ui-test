@@ -1,0 +1,4 @@
+pip install robotframework
+pip install robotframework-requests
+pip install --upgrade robotframework-seleniumlibrary
+xattr -d com.apple.quarantine chromedriver
